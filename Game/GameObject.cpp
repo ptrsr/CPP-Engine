@@ -31,7 +31,7 @@ void GameObject::removeChild(GameObject * other)
 
 void GameObject::addComponent(Component* component)
 {
-	component->parent = *this;
+	component->parent = this;
 
 	components[std::type_index(typeid(*component))] = component;
 }

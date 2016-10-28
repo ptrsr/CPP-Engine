@@ -1,6 +1,5 @@
 #ifndef SPRITECOMPONENT
 #define SPRITECOMPONENT
-
 #include "SFML\Graphics.hpp"
 #include "Component.h"
 
@@ -12,13 +11,13 @@ public:
 
 	//Constructor
 	SpriteComponent(std::string fileName, unsigned int cols = 1, unsigned int rows = 1, Origin origin = Origin::top_left);
-
 	//Functions
 	void setSprite(std::string fileName, unsigned int cols = 1, unsigned int rows = 1, Origin origin = Origin::top_left);
 	void setOrigin(Origin = Origin::top_left);
 	void setFrame(int);
 	sf::Sprite& GetSprite();
-	//void Update();
+
+	void Update() {};
 
 private:
 	//Variables
