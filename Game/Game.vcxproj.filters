@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{f76c4fea-ed87-4336-916a-2feaadc88577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject">
+      <UniqueIdentifier>{78a9e802-13c2-40cb-a768-9c9d20dc2fdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Components">
+      <UniqueIdentifier>{e2d7f76f-009b-49f7-b72b-40e158935dfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Components\SpriteComponent">
+      <UniqueIdentifier>{bc10b3e7-95e6-4ebe-9402-332fbaeecc59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{69e60dbd-4bbf-4c29-9bbe-6b9e455c2c1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Launcher">
+      <UniqueIdentifier>{1119aa59-ceac-4915-9acc-fe9b953de61d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\PlayerComponent">
+      <UniqueIdentifier>{8cfbe135-13a6-4247-bef2-e23453d4aff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Engine">
+      <UniqueIdentifier>{81fea81e-e537-4550-b84d-d485683634e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Component.cpp">
+      <Filter>Engine\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Launcher.cpp">
+      <Filter>Game\Launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerComponent.cpp">
+      <Filter>Game\PlayerComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteComponent.cpp">
+      <Filter>Engine\Components\SpriteComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Engine\Engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Component.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Launcher.h">
+      <Filter>Game\Launcher</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerComponent.h">
+      <Filter>Game\PlayerComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteComponent.h">
+      <Filter>Engine\Components\SpriteComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Engine\Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
