@@ -1,28 +1,17 @@
 #include "SFML\Graphics.hpp"
 #include "GameObject.h"
+#include <string>
 
 class Engine
 {
 private:
-	//singleton
-	static Engine* game;
-	Engine();
-	//private members
-	std::vector<GameObject*> children;
 	sf::RenderWindow* window;
 
-protected: //todo: split engine from game
-	void start();
+protected:
+	void Update();
 
 public:
-	//singleton functions
-	static Engine& get();
-	Engine(Engine const&) = delete;
-	void operator=(Engine const&) = delete;
+	Engine(int windowWidth, int windowHeight, std::string gameName, bool vSync);
 
-	//game functions
-	void setWindow(sf::RenderWindow*);
-	void gameLoop();
-	void addChild(GameObject*);
-
+	void Run();
 };

@@ -1,10 +1,10 @@
 #include "GameObject.h"
 #include <iostream>
+#include <algorithm>
 
-GameObject::GameObject() { };
-
-GameObject::GameObject(sf::Vector2f spawnPos)
+GameObject::GameObject(std::string name, sf::Vector2f spawnPos)
 {
+	this->name = name;
 	setPosition(spawnPos);
 }
 
@@ -17,30 +17,43 @@ sf::Transform GameObject::getGlobalTransform()
 		return getTransform();
 }
 
-void GameObject::addChild(GameObject * other) 
+void GameObject::AddChild(GameObject * child) 
 {
-	children.push_back(other);
-	other->parent = this;
+	children.push_back(child);
+	child->parent = this;
 }
 
-void GameObject::removeChild(GameObject * other) 
+void GameObject::RemoveChild(GameObject * child) 
 {
-	children.erase(std::remove(children.begin(), children.end(), other), children.end());
-	other->parent = nullptr;
+	children.erase(std::remove(children.begin(), children.end(), child), children.end());
+	child->parent = nullptr;
 }
 
-void GameObject::addComponent(Component* component)
+void GameObject::AddComponent(Component* component)
 {
 	component->parent = this;
-
 	components[std::type_index(typeid(*component))] = component;
 }
 
-void GameObject::update() 
+void GameObject::Update() 
 {
 	for (auto const& comp : components) 
+		((Component*)comp.second)->Update();
+
+	for each (GameObject* child in children)
+		child->Update();
+}
+
+GameObject::~GameObject()
+{
+	if (parent != nullptr)
+		this->parent->RemoveChild(this);
+
+	for (std::map<std::type_index, Component*>::iterator itr = components.begin(); itr != components.end(); ++itr)
 	{
-		((Component*)comp.second)->update();
+		if (itr->second != nullptr)
+			delete itr->second;
 	}
+	components.clear();
 }
 

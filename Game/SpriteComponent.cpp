@@ -1,66 +1,84 @@
 #include "SpriteComponent.h"
 #include <iostream>
 
-SpriteComponent::SpriteComponent(std::string fileName, unsigned int cols, unsigned int rows, Origin origin)
-{
-	setSprite(fileName, cols, rows, origin);
+SpriteComponent::SpriteComponent(sf::Texture * texture, unsigned int cols, unsigned int rows, Enums::Origin origin)
+{ 
+	if (texture != nullptr)
+		SetSprite(texture, cols, rows, origin);
 }
 
-void SpriteComponent::setSprite(std::string fileName, unsigned int cols, unsigned int rows, Origin origin)
+SpriteComponent::SpriteComponent(std::string fileName, unsigned int cols, unsigned int rows, Enums::Origin origin)
 {
-	texture.loadFromFile("sprites/" + fileName);
-	
-	this->cols = cols;
-	this->rows = rows;
+	SetSprite(fileName, cols, rows, origin);
+}
 
-	sprite.setTexture(texture);
+void SpriteComponent::SetSprite(sf::Texture * texture, unsigned int cols, unsigned int rows, Enums::Origin origin)
+{
+	this->texture = texture;
+	sprite.setTexture(*texture);
 
-	if (cols == 1 && rows == 1)
-		spriteSize = (sf::Vector2i)texture.getSize();
+	SetAnim(cols, rows);
+	SetOrigin(origin);
+}
+
+void SpriteComponent::SetSprite(std::string fileName, unsigned int cols, unsigned int rows, Enums::Origin origin)
+{
+	texture->loadFromFile("sprites/" + fileName);
+	sprite.setTexture(*texture);
+
+	SetAnim(cols, rows);
+	SetOrigin(origin);
+}
+
+void SpriteComponent::SetAnim(int x, int y)
+{
+	this->cols = x;
+	this->rows = y;
+
+	if (x == 1 && y == 1)
+		spriteSize = (sf::Vector2i)texture->getSize();
 	else
 	{
-		sf::Vector2u tempSize = texture.getSize();
+		sf::Vector2u tempSize = texture->getSize();
 		spriteSize = sf::Vector2i(tempSize.x / cols, tempSize.y / rows);
-		setFrame(1);
+		SetFrame(1);
 	}
-
-	setOrigin(origin);
 }
 
-void SpriteComponent::setFrame(int frame)
+void SpriteComponent::SetFrame(int frame)
 {
 	sf::Vector2i rectPos = sf::Vector2i(((frame % cols) % cols) * spriteSize.x, ((frame / cols) % rows) * spriteSize.y);
 	sprite.setTextureRect(sf::IntRect(rectPos, spriteSize));
 }
 
-void SpriteComponent::setOrigin(Origin origin)
+void SpriteComponent::SetOrigin(Enums::Origin origin)
 {
 	switch (origin)
 	{
-	case Origin::top_left:
+	case Enums::Origin::top_left:
 		sprite.setOrigin(0, 0);
 		break;
 
-	case Origin::top_right:
+	case Enums::Origin::top_right:
 		sprite.setOrigin((float)spriteSize.x, 0);
 		break;
 
-	case Origin::center:
+	case Enums::Origin::center:
 		sprite.setOrigin((float)spriteSize.x / 2, (float)spriteSize.y / 2);
 		break;
 
-	case Origin::bottom_left:
+	case Enums::Origin::bottom_left:
 		sprite.setOrigin(0, (float)spriteSize.y);
 		break;
 
-	case Origin::bottom_right:
+	case Enums::Origin::bottom_right:
 		sprite.setOrigin((float)spriteSize.x, (float)spriteSize.y);
 		break;
 	}
 }
 
-sf::Sprite& SpriteComponent::GetSprite()
+sf::Sprite* SpriteComponent::GetSprite()
 {
-	return sprite;
+	return &sprite;
 }
 

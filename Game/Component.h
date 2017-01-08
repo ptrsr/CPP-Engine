@@ -9,7 +9,7 @@
 class Component
 {
 public:
-	virtual void update() { };
+	virtual void Update() = 0;
 	sf::Transformable * parent;
 };
 

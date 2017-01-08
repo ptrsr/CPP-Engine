@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include <map>
+#include <string>
 
 #include "Component.h"
 #include "SFML\Graphics\Transformable.hpp"
@@ -16,28 +17,28 @@ private:
 	sf::Transform globalTransform;
 
 	GameObject* parent;
-	std::map<std::type_index, Component * > components;
+	std::map<std::type_index, Component*> components;
 
 protected:
 	static GameObject * game;
 
 public:
+	std::string name;
 	std::vector<GameObject*> children;
 
-	GameObject();
-	GameObject(sf::Vector2f);
-
-	virtual void update();
+	GameObject(std::string name = "New GameObject", sf::Vector2f pos = sf::Vector2f());
+	~GameObject();
+	virtual void Update();
 
 	sf::Transform getGlobalTransform();
 
-	void addChild(GameObject *);
-	void removeChild(GameObject *);
+	void AddChild(GameObject *);
+	void RemoveChild(GameObject *);
 
-	void addComponent(Component*);
+	void AddComponent(Component*);
 
 	template <typename T>
-	T * getComponent()
+	T * GetComponent()
 	{
 		std::type_index index(typeid(T));
 
@@ -52,7 +53,7 @@ public:
 	}
 
 	template <typename T>
-	bool hasComponent()
+	bool HasComponent()
 	{
 		if (components.count(std::type_index(typeid(T))) != 0)
 			return true;

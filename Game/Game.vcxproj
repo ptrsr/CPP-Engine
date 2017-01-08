@@ -130,21 +130,92 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Lua\src\lapi.c" />
+    <ClCompile Include="..\Lua\src\lauxlib.c" />
+    <ClCompile Include="..\Lua\src\lbaselib.c" />
+    <ClCompile Include="..\Lua\src\lbitlib.c" />
+    <ClCompile Include="..\Lua\src\lcode.c" />
+    <ClCompile Include="..\Lua\src\lcorolib.c" />
+    <ClCompile Include="..\Lua\src\lctype.c" />
+    <ClCompile Include="..\Lua\src\ldblib.c" />
+    <ClCompile Include="..\Lua\src\ldebug.c" />
+    <ClCompile Include="..\Lua\src\ldo.c" />
+    <ClCompile Include="..\Lua\src\ldump.c" />
+    <ClCompile Include="..\Lua\src\lfunc.c" />
+    <ClCompile Include="..\Lua\src\lgc.c" />
+    <ClCompile Include="..\Lua\src\linit.c" />
+    <ClCompile Include="..\Lua\src\liolib.c" />
+    <ClCompile Include="..\Lua\src\llex.c" />
+    <ClCompile Include="..\Lua\src\lmathlib.c" />
+    <ClCompile Include="..\Lua\src\lmem.c" />
+    <ClCompile Include="..\Lua\src\loadlib.c" />
+    <ClCompile Include="..\Lua\src\lobject.c" />
+    <ClCompile Include="..\Lua\src\lopcodes.c" />
+    <ClCompile Include="..\Lua\src\loslib.c" />
+    <ClCompile Include="..\Lua\src\lparser.c" />
+    <ClCompile Include="..\Lua\src\lstate.c" />
+    <ClCompile Include="..\Lua\src\lstring.c" />
+    <ClCompile Include="..\Lua\src\lstrlib.c" />
+    <ClCompile Include="..\Lua\src\ltable.c" />
+    <ClCompile Include="..\Lua\src\ltablib.c" />
+    <ClCompile Include="..\Lua\src\ltm.c" />
+    <ClCompile Include="..\Lua\src\lundump.c" />
+    <ClCompile Include="..\Lua\src\lutf8lib.c" />
+    <ClCompile Include="..\Lua\src\lvm.c" />
+    <ClCompile Include="..\Lua\src\lzio.c" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Launcher.cpp" />
+    <ClCompile Include="ImageCache.cpp" />
+    <ClCompile Include="LuaGame.cpp" />
+    <ClCompile Include="LuaParser.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="PlayerComponent.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="RectangleComponent.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Lua\src\lapi.h" />
+    <ClInclude Include="..\Lua\src\lauxlib.h" />
+    <ClInclude Include="..\Lua\src\lcode.h" />
+    <ClInclude Include="..\Lua\src\lctype.h" />
+    <ClInclude Include="..\Lua\src\ldebug.h" />
+    <ClInclude Include="..\Lua\src\ldo.h" />
+    <ClInclude Include="..\Lua\src\lfunc.h" />
+    <ClInclude Include="..\Lua\src\lgc.h" />
+    <ClInclude Include="..\Lua\src\llex.h" />
+    <ClInclude Include="..\Lua\src\llimits.h" />
+    <ClInclude Include="..\Lua\src\lmem.h" />
+    <ClInclude Include="..\Lua\src\lobject.h" />
+    <ClInclude Include="..\Lua\src\lopcodes.h" />
+    <ClInclude Include="..\Lua\src\lparser.h" />
+    <ClInclude Include="..\Lua\src\lprefix.h" />
+    <ClInclude Include="..\Lua\src\lstate.h" />
+    <ClInclude Include="..\Lua\src\lstring.h" />
+    <ClInclude Include="..\Lua\src\ltable.h" />
+    <ClInclude Include="..\Lua\src\ltm.h" />
+    <ClInclude Include="..\Lua\src\lua.h" />
+    <ClInclude Include="..\Lua\src\lua.hpp" />
+    <ClInclude Include="..\Lua\src\luaconf.h" />
+    <ClInclude Include="..\Lua\src\lualib.h" />
+    <ClInclude Include="..\Lua\src\lundump.h" />
+    <ClInclude Include="..\Lua\src\lvm.h" />
+    <ClInclude Include="..\Lua\src\lzio.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Enums.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Launcher.h" />
-    <ClInclude Include="PlayerComponent.h" />
+    <ClInclude Include="ImageCache.h" />
+    <ClInclude Include="LuaGame.h" />
+    <ClInclude Include="LuaParser.hpp" />
+    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="RectangleComponent.h" />
     <ClInclude Include="SpriteComponent.h" />
+    <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Lua\src\Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

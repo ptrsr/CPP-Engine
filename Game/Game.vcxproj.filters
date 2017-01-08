@@ -16,14 +16,23 @@
     <Filter Include="Game">
       <UniqueIdentifier>{69e60dbd-4bbf-4c29-9bbe-6b9e455c2c1e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Launcher">
-      <UniqueIdentifier>{1119aa59-ceac-4915-9acc-fe9b953de61d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\PlayerComponent">
-      <UniqueIdentifier>{8cfbe135-13a6-4247-bef2-e23453d4aff0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\Engine">
       <UniqueIdentifier>{81fea81e-e537-4550-b84d-d485683634e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Components\ShapeComponent">
+      <UniqueIdentifier>{71e14c89-b6d5-4851-a40a-2dd2451dc014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Lua">
+      <UniqueIdentifier>{f9c9d6ca-b3b9-45ee-b64f-916475972692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Lua\Source">
+      <UniqueIdentifier>{72d2b834-c0e7-443c-8350-885cebe3d9d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Image Cache">
+      <UniqueIdentifier>{c714d773-2341-4489-a822-764bd926849d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Engine\Input Handler">
+      <UniqueIdentifier>{3ee327ed-172d-43f2-8ba6-a7e51d4897af}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -36,17 +45,128 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Engine\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Launcher.cpp">
-      <Filter>Game\Launcher</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerComponent.cpp">
-      <Filter>Game\PlayerComponent</Filter>
-    </ClCompile>
     <ClCompile Include="SpriteComponent.cpp">
       <Filter>Engine\Components\SpriteComponent</Filter>
     </ClCompile>
     <ClCompile Include="Engine.cpp">
       <Filter>Engine\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleComponent.cpp">
+      <Filter>Engine\Components\ShapeComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaParser.cpp">
+      <Filter>Engine\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lapi.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lauxlib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lbaselib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lbitlib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lcode.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lcorolib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lctype.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\ldblib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\ldebug.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\ldo.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\ldump.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lfunc.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lgc.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\linit.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\liolib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\llex.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lmathlib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lmem.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\loadlib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lobject.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lopcodes.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\loslib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lparser.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lstate.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lstring.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lstrlib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\ltable.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\ltablib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\ltm.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lundump.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lutf8lib.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lvm.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lua\src\lzio.c">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaGame.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCache.cpp">
+      <Filter>Engine\Image Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Engine\Engine\Input Handler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,17 +176,115 @@
     <ClInclude Include="GameObject.h">
       <Filter>Engine\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Launcher.h">
-      <Filter>Game\Launcher</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerComponent.h">
-      <Filter>Game\PlayerComponent</Filter>
-    </ClInclude>
     <ClInclude Include="SpriteComponent.h">
       <Filter>Engine\Components\SpriteComponent</Filter>
     </ClInclude>
     <ClInclude Include="Engine.h">
       <Filter>Engine\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="RectangleComponent.h">
+      <Filter>Engine\Components\ShapeComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>Engine\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaParser.hpp">
+      <Filter>Engine\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lapi.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lauxlib.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lcode.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lctype.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\ldebug.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\ldo.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lfunc.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lgc.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\llex.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\llimits.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lmem.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lobject.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lopcodes.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lparser.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lprefix.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lstate.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lstring.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\ltable.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\ltm.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lua.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lua.hpp">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\luaconf.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lualib.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lundump.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lvm.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lua\src\lzio.h">
+      <Filter>Engine\Lua\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaGame.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCache.h">
+      <Filter>Engine\Image Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>Engine\Engine\Input Handler</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Lua\src\Makefile">
+      <Filter>Engine\Lua\Source</Filter>
+    </None>
   </ItemGroup>
 </Project>

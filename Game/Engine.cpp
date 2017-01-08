@@ -1,52 +1,46 @@
 #include "Engine.h"
 #include "GameObject.h"
 #include "SpriteComponent.h"
+#include "World.h"
+#include "InputHandler.h"
+
 #include <vector>
 #include <iostream>
 
-Engine* Engine::game;
 
-Engine::Engine() { };
+Engine::Engine(int windowWidth, int windowHeight, std::string gameName, bool vSync) 
+{ 
+	window = new sf::RenderWindow(sf::VideoMode(windowWidth, windowHeight), gameName, sf::Style::Default, sf::ContextSettings(24, 8, 0, 3, 3));
+	window->setVerticalSyncEnabled(vSync);
 
-void Engine::start()
+	InputHandler::SetWindow(window);
+}
+
+void Engine::Update()
 {
+	GameObject & world = World::Get();
+
+	world.Update();
+
+	for each (GameObject* obj in world.children)
+	{
+		if (obj->HasComponent<SpriteComponent>())
+			window->draw(*obj->GetComponent<SpriteComponent>()->GetSprite(), obj->getGlobalTransform());
+	}
+}
+
+void Engine::Run() 
+{
+	while (window->isOpen())
+	{
+		InputHandler::Update();
+
+		if (InputHandler::close)
+			window->close();
+
+		window->clear();
+		Update();
+		window->display();
+	}
 	
-}
-
-void Engine::gameLoop() 
-{
-	window->clear();
-
-	for each (GameObject* obj in children)
-	{
-		obj->update();
-
-		if (obj->hasComponent<SpriteComponent>())
-		{
-			window->draw(obj->getComponent<SpriteComponent>()->GetSprite(), obj->getGlobalTransform());
-		}
-	}
-
-	window->display();
-}
-
-void Engine::addChild(GameObject* child)
-{
-	this->children.push_back(child);
-
-}
-
-void Engine::setWindow(sf::RenderWindow* window)
-{
-	this->window = window;
-}
-
-Engine& Engine::get()
-{
-	if (game == nullptr) 
-	{
-		game = new Engine();
-		game->start();
-	}
-	return *game;
 }
